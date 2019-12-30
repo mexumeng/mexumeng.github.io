@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>用python合并多个文件至一个文件</title>
+    <url>/posts/e76d34da/</url>
+    <content><![CDATA[<p>最近在手机上下载了一个电影，想把电影上传到自己的网盘上，可发现手机里存的那个电影是很多小文件组成的，估计是手机app在播放这电影时做了处理导致播放不是一个个的小片段而是整个电影；我的目的是上传一个电影文件，所以想到如何合并这些文件到一个文件，网上查了一下，window命令行下能直接合并这些文件，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">copy /b *.ts D:new.ts</span><br></pre></td></tr></table></figure></p>
+<p>解释一下首先要进入需要合并的目录下执行上边这条命令，/b是指以二进制文件复制，*.ts是文件以.ts结尾的你要合并的所有（视频)文件名，D:new.ts是你最后生成目标文件路径，很简单吧<br>于是就想到用python来完成这个工作，思路和以上那条命令略有不同，不过是相似的。首先是先以二进制文件读取的方式将所有文件遍历读取以二进制追加存入目标文件即可实现代码如下：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import os</span><br><span class="line">sourcepath = r&apos;C:\Users\Administrator\sourcefile&apos; # 你想要合并的文件的路径（其下文件要以1.ts,2.ts,3.ts这种正常顺序排列）</span><br><span class="line">os.chdir(rootpath) # 进入源文件夹下</span><br><span class="line">pathlists = os.listdir() # 获取所有文件名</span><br><span class="line">pathlists =str(pathlists) # 转换成str</span><br><span class="line">pat = r&apos;\w*.ts&apos; # 正则pattern为了获取.ts结尾的所有文件名</span><br><span class="line">pathlists = re.findall(pat, pathlists)</span><br><span class="line">outfile = open(&apos;D:new.ts&apos;,&apos;ab&apos;) # 打开目标文件</span><br><span class="line">for pathlist in pathlists:</span><br><span class="line">    ne = open(pathlist,&apos;rb&apos;) # 遍历每个源文件打开</span><br><span class="line">    ne = ne.read() # 读取文件内容</span><br><span class="line">    outfile.write(ne) # 写入目标文件</span><br><span class="line">print(&apos;结束&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>这样就OK了，重点是你的源文件都是有序的</p>
+]]></content>
+      <tags>
+        <tag>-python -文件操作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我资源推荐</title>
+    <url>/posts/efef5b4c/</url>
+    <content><![CDATA[<p>两百余款软件VIP破解版下载地址：</p>
+<h2 id="http-t-cn-Rg8bZdP"><a href="#http-t-cn-Rg8bZdP" class="headerlink" title="http://t.cn/Rg8bZdP"></a><a href="http://t.cn/Rg8bZdP" target="_blank" rel="noopener">http://t.cn/Rg8bZdP</a></h2><p>百度网盘（下载不限速，视频倍速播放）<br><a href="https://www.lanzous.com/i229mdi" target="_blank" rel="noopener">https://www.lanzous.com/i229mdi</a><br>赛风VPN专业版（科学上网工具）<br><a href="https://www.lanzous.com/i2frupe" target="_blank" rel="noopener">https://www.lanzous.com/i2frupe</a><br>搜图神器（直装会员版，壁纸免费下载）<br><a href="https://www.lanzous.com/i2akyta" target="_blank" rel="noopener">https://www.lanzous.com/i2akyta</a><br>麻花影视（全网VIP视频免费看，移除广告，优化版）<br><a href="https://www.lanzous.com/i2e7j0h" target="_blank" rel="noopener">https://www.lanzous.com/i2e7j0h</a><a id="more"></a><br>腾讯QQ（防撤回，破解闪照，全新界面，接入网易云音乐接口）<br><a href="https://www.lanzous.com/i2cc53e" target="_blank" rel="noopener">https://www.lanzous.com/i2cc53e</a><br>任我行（虚拟定位软件，解锁付费）<br><a href="https://www.lanzous.com/i1py2sf" target="_blank" rel="noopener">https://www.lanzous.com/i1py2sf</a><br>驾校一点通（解锁会员课程，学习驾照）<br><a href="https://www.lanzous.com/i1r8l4b" target="_blank" rel="noopener">https://www.lanzous.com/i1r8l4b</a><br>迅雷（不限速版本，可以不登陆下载）<br><a href="https://www.lanzous.com/i1i5qqb" target="_blank" rel="noopener">https://www.lanzous.com/i1i5qqb</a><br>WPS办公（解锁高级版）<br><a href="https://www.lanzous.com/i2cmhha" target="_blank" rel="noopener">https://www.lanzous.com/i2cmhha</a><br>存储空间清理（清理神器破解版）<br><a href="https://www.lanzous.com/i28yc3e" target="_blank" rel="noopener">https://www.lanzous.com/i28yc3e</a><br>QQ透明头像一键设置，一键签到<br><a href="https://www.lanzous.com/i2a1zud" target="_blank" rel="noopener">https://www.lanzous.com/i2a1zud</a><br>微信聊天记录恢复软件<br><a href="https://www.lanzous.com/i2a0eub" target="_blank" rel="noopener">https://www.lanzous.com/i2a0eub</a><br>酷我音乐破解版（歌曲免费下载免费听）<br><a href="https://www.lanzous.com/i2d35ra" target="_blank" rel="noopener">https://www.lanzous.com/i2d35ra</a><br>搜书大师（书籍小说免费看）<br><a href="https://www.lanzous.com/i28cuqd" target="_blank" rel="noopener">https://www.lanzous.com/i28cuqd</a><br>Xmind思维导图（内购破解版）<br><a href="https://www.lanzous.com/i2ckpkj" target="_blank" rel="noopener">https://www.lanzous.com/i2ckpkj</a><br>均为安全绿色软件，感谢使用！  </p>
+]]></content>
+      <tags>
+        <tag>-资源 -学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VIP电影免费搜索观看神器</title>
+    <url>/posts/3a7e76cf/</url>
+    <content><![CDATA[<h1 id="给各位大爷推荐一个免费观看vip电影电视剧的小神器，视频资源多，无广告，我自己用python爬虫编写，有需要的话就去我的github下载源码吧，不是程序员没关系，私信我，或者留言电影电视剧名字，我给你找到连接，免费的哦"><a href="#给各位大爷推荐一个免费观看vip电影电视剧的小神器，视频资源多，无广告，我自己用python爬虫编写，有需要的话就去我的github下载源码吧，不是程序员没关系，私信我，或者留言电影电视剧名字，我给你找到连接，免费的哦" class="headerlink" title="给各位大爷推荐一个免费观看vip电影电视剧的小神器，视频资源多，无广告，我自己用python爬虫编写，有需要的话就去我的github下载源码吧，不是程序员没关系，私信我，或者留言电影电视剧名字，我给你找到连接，免费的哦"></a>给各位大爷推荐一个免费观看vip电影电视剧的小神器，视频资源多，无广告，我自己用python爬虫编写，有需要的话就去我的github下载源码吧，不是程序员没关系，私信我，或者留言电影电视剧名字，我给你找到连接，免费的哦</h1><p>嘿嘿嘿。。。。  </p>
+<h1 id="忘了件重要的事情就是—–-gt-看全文"><a href="#忘了件重要的事情就是—–-gt-看全文" class="headerlink" title="忘了件重要的事情就是—–&gt;看全文"></a>忘了件重要的事情就是—–&gt;看全文</h1><a id="more"></a>
+<h1 id="我的GitHub在右上角啊-就是那个猫咪图标啊啊啊啊，那个源码名字叫searchvideo，欢迎star"><a href="#我的GitHub在右上角啊-就是那个猫咪图标啊啊啊啊，那个源码名字叫searchvideo，欢迎star" class="headerlink" title="我的GitHub在右上角啊,就是那个猫咪图标啊啊啊啊，那个源码名字叫searchvideo，欢迎star"></a>我的GitHub在右上角啊,就是那个猫咪图标啊啊啊啊，那个源码名字叫searchvideo，欢迎star</h1><h2 id="附一张图片吧"><a href="#附一张图片吧" class="headerlink" title="附一张图片吧"></a>附一张图片吧</h2><p><img src="http://pjwvkfdq5.bkt.clouddn.com/videolist.png" style="width: 700">  </p>
+]]></content>
+      <tags>
+        <tag>-python -爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python简单生成二维码</title>
+    <url>/posts/1ab4ddb7/</url>
+    <content><![CDATA[<h3 id="用Python生成二维码是很简单的，只需要安一个第三方包就行了"><a href="#用Python生成二维码是很简单的，只需要安一个第三方包就行了" class="headerlink" title="用Python生成二维码是很简单的，只需要安一个第三方包就行了"></a>用Python生成二维码是很简单的，只需要安一个第三方包就行了</h3><p>1.首先说一下环境是：python3+windows环境下</p>
+<p>安装qrcode模块，安装方式：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install qrcode</span><br></pre></td></tr></table></figure></p>
+<p>单纯生成一个二维码一个qrcode就够了,如果想在二维码中加入自己的logo，那就需要pillow模块了</p>
+<p>也就是处理图片的包pillow，安装方式：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install pillow</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>  
+<p>在这里只介绍简单简单简单用法：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import qrcode</span><br><span class="line">url = &apos;https://www.jianshu.com/u/11c83455878e&apos; # 要生成的二维码内容，一般是url</span><br><span class="line">qr = qrcode.make(url)</span><br><span class="line">qr.save(&apos;./code.png&apos;) # 保存二维码的路径和文件名</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13297094-c29f9e3a6671da25.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="myqr"><br><em>这是我的QR试一下吧</em></p>
+<h2 id="当然还可以设置生成二维码的大小，样式，和遮挡识别率，还有logo-这里我就不啰嗦了，简单的应该够用喽"><a href="#当然还可以设置生成二维码的大小，样式，和遮挡识别率，还有logo-这里我就不啰嗦了，简单的应该够用喽" class="headerlink" title="当然还可以设置生成二维码的大小，样式，和遮挡识别率，还有logo,这里我就不啰嗦了，简单的应该够用喽"></a>当然还可以设置生成二维码的大小，样式，和遮挡识别率，还有logo,这里我就不啰嗦了，简单的应该够用喽</h2>]]></content>
+      <categories>
+        <category>语言</category>
+      </categories>
+      <tags>
+        <tag>pyhton</tag>
+        <tag>二维码，简单</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python的学习资料汇总</title>
+    <url>/posts/5ae94a24/</url>
+    <content><![CDATA[<h2 id="排名不分先后"><a href="#排名不分先后" class="headerlink" title="排名不分先后  "></a><strong><em><font color="#CCCC33">排名不分先后</font></em></strong>  </h2><p>1.玩蛇网Python100例教程频道，让小伙伴们学习Python可以更快速上手，更加好的入门编程语言，<br>100个Python案例由浅入深环环相扣，各种自虐自种烧脑的习题与python习题解答答题，还有更多<br>源码和Python相关的教程供您学习——》<a href="http://www.iplaypy.com/python-100/" target="_blank">玩蛇网</a><br><img src="/images/wanshe.png" alt="玩蛇网"><br><del>继续</del><br><a id="more"></a><br>2.学习python的过程中小伙伴们时不时的会出现windows下第三方包安装失败的情况，这个网站就是<br>来专门处理你的部分模块安装失败问题的，找到对应的模块选择正确的系统版本下载本地安装即可</p>
+<ul>
+<li><h2 id="Unofficial-Windows-Binaries-for-Python-Extension-Packages"><a href="#Unofficial-Windows-Binaries-for-Python-Extension-Packages" class="headerlink" title="Unofficial Windows Binaries for Python Extension Packages"></a><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/" target="_blank">Unofficial Windows Binaries for Python Extension Packages</a></h2>3.董老师的博客，内容颇多，资源颇多,进来挖掘吧 ——》<a href="http://www.dongwm.com/" target="_blank">董伟明的博客</a><br><img src="http://www.dongwm.com/img/avatar.png" alt="董明伟"><br>4.实验楼，实验楼是一家专注于IT技术的在线实训平台，采用创新的“在线实验”学习模式，为学生<br>及在职程序员提供编程、运维、测试、云计算、大数据、数据库等当前主流IT技术实践课程——》<a href="https://www.shiyanlou.com/" target="_blank">实验楼</a><br><img src="https://static.shiyanlou.com/img/common/shiyanlou-guide.png" alt="实验楼"><br>5.python中文学习大本营，这里有Python2.7.X官方教程、Python3.6.X官方教程以及Flask资料大全，<br>如果你需要，在这里可以找到你想要的几乎所有的教程——》<a href="http://www.pythondoc.com/" target="_blank">python中文学习大本营</a><br><img src="http://www.pythondoc.com/img/python3.png" alt="python中文学习大本营">  <font color="#6B1AE6">未完待续。。。。。。欢迎追加哦！！！</font>
+
+
+
+
+
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python中枚举</title>
+    <url>/posts/d32ffc3b/</url>
+    <content><![CDATA[<h2 id="枚举的特性："><a href="#枚举的特性：" class="headerlink" title="枚举的特性："></a>枚举的特性：</h2><h3 id="1-不可变，属性名不能重复"><a href="#1-不可变，属性名不能重复" class="headerlink" title="1.不可变，属性名不能重复"></a><font color="#8470FF">1.不可变，属性名不能重复</font></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#枚举变量1</span><br><span class="line">from enum import Enum</span><br><span class="line">class EnumDemo(Enum):</span><br><span class="line">    YELLOW = 1</span><br><span class="line">    YELLOW2 = 1 # YELLOW2为YELLOW的别名</span><br><span class="line">    RED = 2</span><br><span class="line">    BLACK = 3</span><br><span class="line">    GREEN = 4</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#枚举变量2</span><br><span class="line">class EnumDemo2(Enum):</span><br><span class="line">    YELLOW = 1</span><br><span class="line">    YELLOW2 = 1 # YELLOW2为YELLOW的别名</span><br><span class="line">    RED = 2</span><br><span class="line">    BLACK = 3</span><br><span class="line">    GREEN = 4</span><br></pre></td></tr></table></figure>
+<a id="more"></a>  
+<h3 id="2-枚举可以作等值比较，不可以比较大小"><a href="#2-枚举可以作等值比较，不可以比较大小" class="headerlink" title="2.枚举可以作等值比较，不可以比较大小"></a><font color="#8470FF">2.枚举可以作等值比较，不可以比较大小</font></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(EnumDemo.YELLOW == EnumDemo.YELLOW)  # True</span><br></pre></td></tr></table></figure>
+<h3 id="3-两个不同的枚举也可以作等值比较"><a href="#3-两个不同的枚举也可以作等值比较" class="headerlink" title="3. 两个不同的枚举也可以作等值比较"></a><font color="#8470FF">3. 两个不同的枚举也可以作等值比较</font></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(EnumDemo.YELLOW == EnumDemo2.YELLOW)  # False</span><br><span class="line">print(EnumDemo.YELLOW)  #YELLOW</span><br><span class="line">print(EnumDemo.YELLOW2)  #YELLOW2</span><br></pre></td></tr></table></figure>
+<h3 id="4-枚举也可以遍历"><a href="#4-枚举也可以遍历" class="headerlink" title="4.枚举也可以遍历"></a><font color="#8470FF">4.枚举也可以遍历</font></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for e in EnumDemo:</span><br><span class="line">    print(e)  </span><br><span class="line">    #EnumDemo.YELLOW</span><br><span class="line">    #EnumDemo.RED</span><br><span class="line">    #EnumDemo.BLACK</span><br><span class="line">    #EnumDemo.GREEN</span><br></pre></td></tr></table></figure>
+<h3 id="5-可以打印出别名"><a href="#5-可以打印出别名" class="headerlink" title="5.可以打印出别名"></a><font color="#8470FF">5.可以打印出别名</font></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for e in EnumDemo.__members__.items():</span><br><span class="line">    print(e)</span><br><span class="line">    #(&apos;YELLOW&apos;, &lt;EnumDemo.YELLOW: 1&gt;)</span><br><span class="line">    #(&apos;YELLOW2&apos;, &lt;EnumDemo.YELLOW: 1&gt;)</span><br><span class="line">    #(&apos;RED&apos;, &lt;EnumDemo.RED: 2&gt;)</span><br><span class="line">    #(&apos;BLACK&apos;, &lt;EnumDemo.BLACK: 3&gt;)</span><br><span class="line">    #&apos;GREEN&apos;, &lt;EnumDemo.GREEN: 4&gt;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for e in EnumDemo.__members__:</span><br><span class="line">    print(e)</span><br><span class="line">    #YELLOW</span><br><span class="line">    #YELLOW2</span><br><span class="line">    #RED</span><br><span class="line">    #BLACK</span><br><span class="line">    #GREEN</span><br></pre></td></tr></table></figure>
+<h3 id="对比类变量"><a href="#对比类变量" class="headerlink" title="对比类变量"></a><font color="#8470FF">对比类变量</font></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class ClassDemo():</span><br><span class="line">    YELLOW = 1</span><br><span class="line">    YELLOW = 2</span><br><span class="line">print(ClassDemo.YELLOW)  #2</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>枚举</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+</search>
